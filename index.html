@@ -11,66 +11,100 @@
       height: 100vh;
       margin: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-family: Arial, sans-serif;
+      gap: 10px;
     }
 
-    #openNotcord {
-      background: #5865F2;
+    button {
+      background: #00b7ff;
       color: white;
       border: none;
       padding: 15px 32px;
       border-radius: 10px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.2s;
+      width: 220px;
     }
 
-    #openNotcord:hover {
-      background: #4752C4;
+    button:hover {
+      background: #0093cc;
       transform: scale(1.05);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #00cfff;
     }
   </style>
 </head>
 <body>
-  <button id="openNotcord">GRIP secure🔒</button>
+  <h1>OPEN GRIP</h1>
+
+  <button id="btn1">utopia</button>
+  <button id="btn2">Open 2</button>
+  <button id="btn3">Open 3</button>
+  <button id="btn4">Open 4</button>
+  <button id="btn5">Open 5</button>
+  <button id="btn6">Open 6</button>
+  <button id="btn7">Open 7</button>
+  <button id="btn8">Open 8</button>
+  <button id="btn9">Open 9</button>
+  <button id="btn10">Open 10</button>
 
   <script>
-    document.getElementById("openNotcord").addEventListener("click", () => {
-      const newTab = window.open("about:blank", "_blank");
-      if (newTab) {
-        // Write a new page inside about:blank and embed your site there
-        newTab.document.write(`
-          <html>
-            <head>
-              <title>Notcord</title>
-              <style>
-                html, body {
-                  margin: 0;
-                  padding: 0;
-                  height: 100%;
-                  overflow: hidden;
-                  background-color: #0b0b11;
-                }
-                iframe {
-                  width: 100%;
-                  height: 100%;
-                  border: none;
-                }
-              </style>
-            </head>
-            <body>
-              <iframe src="https://gas.education"></iframe>
-            </body>
-          </html>
-        `);
-        newTab.document.close();
-      } else {
-        alert("Please allow pop-ups for this site!");
-      }
-    });
+    // Change these URLs to whatever you want
+    const urls = [
+      "https://gas.education",
+      "https://",
+      "https://",
+      "https://",
+      "https://",
+      "https://",
+      "https://",
+      "https://",
+      "https://",
+      "https://"
+    ];
+
+    for (let i = 1; i <= 10; i++) {
+      document.getElementById(`btn${i}`).addEventListener("click", () => {
+        const newTab = window.open("about:blank", "_blank");
+        if (newTab) {
+          newTab.document.write(`
+            <html>
+              <head>
+                <title>Site ${i}</title>
+                <style>
+                  html, body {
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                    overflow: hidden;
+                    background-color: #0b0b11;
+                  }
+                  iframe {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                  }
+                </style>
+              </head>
+              <body>
+                <iframe src="${urls[i - 1]}"></iframe>
+              </body>
+            </html>
+          `);
+          newTab.document.close();
+        } else {
+          alert("Please allow pop-ups for this site!");
+        }
+      });
+    }
   </script>
 </body>
 </html>
