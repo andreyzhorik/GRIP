@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPEN GRIP</title>
+  <style>
+    body {
+      background-color: #0b0b11;
+      color: white;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #openNotcord {
+      background: #5865F2;
+      color: white;
+      border: none;
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #openNotcord:hover {
+      background: #4752C4;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <button id="openNotcord">GRIP secure🔒</button>
+
+  <script>
+    document.getElementById("openNotcord").addEventListener("click", () => {
+      const newTab = window.open("about:blank", "_blank");
+      if (newTab) {
+        // Write a new page inside about:blank and embed your site there
+        newTab.document.write(`
+          <html>
+            <head>
+              <title>Notcord</title>
+              <style>
+                html, body {
+                  margin: 0;
+                  padding: 0;
+                  height: 100%;
+                  overflow: hidden;
+                  background-color: #0b0b11;
+                }
+                iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: none;
+                }
+              </style>
+            </head>
+            <body>
+              <iframe src="https://andreyzhorik.github.io/notcordz3"></iframe>
+            </body>
+          </html>
+        `);
+        newTab.document.close();
+      } else {
+        alert("Please allow pop-ups for this site!");
+      }
+    });
+  </script>
+</body>
+</html>
