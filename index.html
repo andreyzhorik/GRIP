@@ -13,9 +13,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       font-family: Arial, sans-serif;
       gap: 10px;
+      padding: 20px 0;
     }
 
     button {
@@ -40,11 +41,17 @@
       margin-bottom: 20px;
       color: #00cfff;
     }
+
+    h2 {
+      margin-top: 30px;
+      color: #00cfff;
+    }
   </style>
 </head>
 <body>
   <h1>OPEN GRIP</h1>
 
+  <!-- Original Buttons -->
   <button id="btn1">utopia</button>
   <button id="btn2">waves 1</button>
   <button id="btn3">waves 2</button>
@@ -60,9 +67,29 @@
   <button id="btn13">inter 4</button>
   <button id="btn14">inter 5</button>
 
+  <!-- Shadow Section -->
+  <h2>Shadow</h2>
+  <button id="btn15">shadow 1</button>
+  <button id="btn16">shadow 2</button>
+  <button id="btn17">shadow 3</button>
+  <button id="btn18">shadow 4</button>
+  <button id="btn19">shadow 5</button>
+  <button id="btn20">shadow 6</button>
+  <button id="btn21">shadow 7</button>
+
+  <!-- Doge Section -->
+  <h2>Doge</h2>
+  <button id="btn22">doge 1</button>
+  <button id="btn23">doge 2</button>
+  <button id="btn24">doge 3</button>
+  <button id="btn25">doge 4</button>
+  <button id="btn26">doge 5</button>
+  <button id="btn27">doge 6</button>
+  <button id="btn28">doge 7</button>
+
   <script>
-    // Change these URLs to whatever you want
     const urls = [
+      // Original URLs
       "https://gas.education",
       "https://welove.playernation.navarajdhungana.com.np/",
       "https://ne.conae.ar/",
@@ -75,11 +102,32 @@
       "https://history.drsanjay.com.au/",
       "https://science.asistdoc.ar/",
       "https://playernation.asistdoc.ar/",
-      "https://mathnotes.asistdoc.ar/"
+      "https://mathnotes.asistdoc.ar/",
+
+      // Shadow URLs
+      "https://monitoring.metropolitanstaffingsolutions.com/",
+      "https://environment.inpact.net/",
+      "https://science.conae.ar/",
+      "https://novastats.willemvisser.co.za/",
+      "https://garden.baumgardner.us/",
+      "https://peace.corporateadworld.com/",
+      "https://clevercoding.fatibara.com/",
+
+      // Doge URLs
+      "https://computer-coding.insheep.org/",
+      "https://edu.science.astikiu.lt/",
+      "https://help.outdoorzone.ie/",
+      "https://indev.interdoge.cfd.cdn.cloudflare.net/",
+      "https://deltamath.interdoge.cfd.cdn.cloudflare.net/",
+      "https://chemistry-lesson-2.sciencevictory.com/",
+      "https://thuisleren.ifacts.ro/"
     ];
 
-    for (let i = 1; i <= 14; i++) {
-      document.getElementById(`btn${i}`).addEventListener("click", () => {
+    // Generate button functionality
+    for (let i = 1; i <= urls.length; i++) {
+      const btn = document.getElementById(`btn${i}`);
+      if (!btn) continue;
+      btn.addEventListener("click", () => {
         const newTab = window.open("about:blank", "_blank");
         if (newTab) {
           newTab.document.write(`
