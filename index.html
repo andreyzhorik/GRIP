@@ -150,7 +150,13 @@
                 </style>
               </head>
               <body>
-                <iframe src="${urls[i - 1]}"></iframe>
+		<iframe src="${urls[i - 1]}"></iframe>
+				<script>
+				window.addEventListener("beforeunload", (event) => {
+					event.preventDefault();
+					event.returnValue = "";
+				});
+				<\/script>
               </body>
             </html>
           `);
